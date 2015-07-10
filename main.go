@@ -46,8 +46,8 @@ func updateRoute53(c *Route53Change) (string, error) {
 				{ // Required
 					Action: aws.String("UPSERT"), // Required
 					ResourceRecordSet: &route53.ResourceRecordSet{ // Required
-						Name: aws.String(c.Hostname), // Required
-						Type: aws.String("CNAME"),    // Required
+						Name: aws.String(c.Hostname),   // Required
+						Type: aws.String(c.RecordType), // Required
 						ResourceRecords: []*route53.ResourceRecord{
 							{ // Required
 								Value: aws.String(c.AWSHostname), // Required
