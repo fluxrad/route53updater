@@ -93,9 +93,6 @@ func main() {
 
 	var awsHostname string
 	if rr == "" {
-		if recordType == "A" {
-			log.Fatal("Cannot use an A record to point to AWS hostnames")
-		}
 		awsHostname = fetchAwsHostname()
 	} else {
 		awsHostname = rr
